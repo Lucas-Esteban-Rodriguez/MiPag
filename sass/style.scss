@@ -1,0 +1,205 @@
+$blanco: #ffffff;
+$negro: #000000;
+$classic: green;
+$gris-claro: #e8e8e8;
+$negro-claro: #212529;
+
+@mixin flexbox-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+}
+.body-idioma {
+    @include flexbox-center;
+    height: 100vh;
+    background-color: $gris-claro;
+}
+.fondo-spinner {
+    @include flexbox-center;
+    background-color: $gris-claro;
+}
+.spinner {
+    width: 44px;
+    height: 44px;
+    animation: spinner-y0fdc1 2s infinite ease;
+    transform-style: preserve-3d;
+   }
+   
+   .spinner > div {
+    background-color: rgba(0,77,255,0.2);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border: 2px solid #004dff;
+   }
+   
+   .spinner div:nth-of-type(1) {
+    transform: translateZ(-22px) rotateY(180deg);
+   }
+   
+   .spinner div:nth-of-type(2) {
+    transform: rotateY(-270deg) translateX(50%);
+    transform-origin: top right;
+   }
+   
+   .spinner div:nth-of-type(3) {
+    transform: rotateY(270deg) translateX(-50%);
+    transform-origin: center left;
+   }
+   
+   .spinner div:nth-of-type(4) {
+    transform: rotateX(90deg) translateY(-50%);
+    transform-origin: top center;
+   }
+   
+   .spinner div:nth-of-type(5) {
+    transform: rotateX(-90deg) translateY(50%);
+    transform-origin: bottom center;
+   }
+   
+   .spinner div:nth-of-type(6) {
+    transform: translateZ(22px);
+   }
+   
+   @keyframes spinner-y0fdc1 {
+    0% {
+     transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+    }
+   
+    50% {
+     transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+    }
+   
+    100% {
+     transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+    }
+   }
+
+.div-idioma {
+    border-radius: 20px;
+    background-color: $blanco;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    input {
+        background-color: transparent;
+        border: 2px solid $negro-claro;
+        color: $negro-claro;
+        font-weight: bold;
+        padding: 8px;
+        transition: .4s;
+        &:hover {
+            background-color: $negro-claro;
+            color: $blanco;
+        }
+        &:focus {
+            transform: scale(110%);
+        }
+    }
+}
+
+//----------------------------------------------------- INDEX-------------------------------------------------------------------------
+@keyframes show {
+    from {
+        transform: translateX(100%);
+    }
+}
+.show {
+animation: show .5s;
+}
+.slow {
+display: none;
+}
+.logo {
+width: 128px;
+height: 64px;
+background-color: aquamarine;
+}
+nav {
+border-bottom: 1px solid $classic;
+div {
+    ul {
+        .nav-link__active {
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                background-color: $classic;
+                z-index: -1;
+            }
+        }
+        .nav-link {
+            color: $negro;
+            position: relative;
+            z-index: 1;
+            margin: 5px;
+            transition: .4s;
+            overflow: hidden;
+            &::before {
+                content: '';
+                position: absolute;
+                right: -100%;
+                bottom: 100%;
+                width: 100%;
+                height: 100%;
+                background-color: $classic;
+                z-index: -1;
+                transition: .4s;
+            }
+            &:hover {
+                color: $blanco;
+            }
+            &:hover::before {
+                bottom: 0;
+                right: 0;
+            }
+            &:focus {
+                color: $negro;
+            }
+        }
+    }
+}
+}
+footer {
+div {
+    border-bottom: 1px solid $classic;
+}
+}
+.contenedor-titulo__1 {
+height: max-content;
+}
+.titulo__1 {
+background-color: $classic;
+}
+.container-card__1 {
+width: 320px;
+height: 370px;
+}
+.container-card__2 {
+width: 300px;
+height: 500px;
+box-shadow: 0.3em 0.3em 0.7em gray;
+background-color: $blanco;
+}
+.body-nosotros {
+background-color: $gris-claro;
+}
+.btn-modal {
+border: none;
+background: #1875FF;
+color: white;
+text-align: center;
+box-shadow: 0px 14px 56px -11px #1875FF;
+width: 10em;
+padding: 1em;
+}
