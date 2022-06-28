@@ -1,6 +1,3 @@
-$(window).on('load', function () {
-    $('.fondo-spinner').delay(1000).fadeOut('slow');
-});
 
 $('#Inicio').click(function () {
     $('.body-inicio').addClass('show').removeClass('slow') && $('#Inicio').addClass('nav-link__active')
