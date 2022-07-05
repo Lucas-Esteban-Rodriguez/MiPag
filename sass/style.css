@@ -172,9 +172,26 @@ body {
 }
 
 .logo {
-  width: 128px;
-  height: 64px;
-  background-color: aquamarine;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  text-decoration: none;
+  color: #212529;
+  font-family: 'Baumans', cursive;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.logo:after {
+  content: ' { }';
+  color: green;
+}
+
+.logo:hover {
+  color: #212529;
 }
 
 nav {
@@ -268,5 +285,153 @@ footer div {
           box-shadow: 0px 14px 56px -11px #1875FF;
   width: 10em;
   padding: 1em;
+}
+
+.card-contacto-formulario {
+  position: relative;
+  height: 450px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0.3em 0.3em 0.7em gray;
+          box-shadow: 0.3em 0.3em 0.7em gray;
+}
+
+.card-contacto-formulario .label-contacto {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  z-index: 1;
+  position: relative;
+}
+
+.card-contacto-formulario .label-contacto textarea {
+  width: 500px;
+  height: 150px;
+  resize: none;
+}
+
+.card-contacto-formulario .label-contacto input {
+  width: 100%;
+  height: 35px;
+  -webkit-transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-contacto-formulario .label-contacto span {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: absolute;
+  background-color: #ffffff;
+  -webkit-transform: scale(85%);
+          transform: scale(85%);
+  z-index: 5;
+  color: gray;
+  pointer-events: none;
+  top: 29%;
+  left: 15px;
+  -webkit-transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-contacto-formulario .label-contacto input:focus, .card-contacto-formulario .label-contacto input:valid {
+  outline: none;
+  border: 2px solid #1875FF;
+}
+
+.card-contacto-formulario .label-contacto .input:focus ~ span, .card-contacto-formulario .label-contacto input:valid ~ span {
+  -webkit-transform: translateY(-55%) scale(0.8);
+          transform: translateY(-55%) scale(0.8);
+  padding: 0 .2em;
+  color: #1875FF;
+}
+
+.card-contacto-formulario .email-whatsapp {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  right: -15%;
+  top: 40px;
+}
+
+.card-contacto-formulario .email-whatsapp .enviar__instagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 50px;
+  background-color: #212529;
+  color: #ffffff;
+}
+
+.card-contacto-formulario .email-whatsapp .enviar__instagram div {
+  width: 50%;
+  height: 100%;
+  background-image: url(/img/icons/instagram.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-contacto-formulario .email-whatsapp .enviar__whatsapp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 50px;
+  background-color: #212529;
+  color: #ffffff;
+}
+
+.card-contacto-formulario .email-whatsapp .enviar__whatsapp div {
+  width: 50%;
+  height: 100%;
+  background-image: url(/img/icons/whatsapp.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-contacto-formulario .email-whatsapp .enviar__email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 50px;
+  background-color: #212529;
+  color: #ffffff;
+}
+
+.card-contacto-formulario .email-whatsapp .enviar__email div {
+  width: 50%;
+  height: 100%;
+  background-image: url(/img/icons/gmail.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=style.css.map */

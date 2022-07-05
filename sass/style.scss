@@ -112,18 +112,29 @@ body {
     }
 }
 .show {
-animation: show .5s;
+    animation: show .5s;
 }
 .slow {
-display: none;
+    display: none;
 }
 .logo {
-width: 128px;
-height: 64px;
-background-color: aquamarine;
+    width: max-content;
+    height: max-content;
+    text-decoration: none;
+    color: $negro-claro;
+    font-family: 'Baumans', cursive;
+    font-weight: bold;
+    font-size: 2.5rem;
+    &:after {
+        content: ' { }';
+        color: $classic;
+    }
+    &:hover {
+        color: $negro-claro;
+    }
 }
 nav {
-border-bottom: 1px solid $classic;
+    border-bottom: 1px solid $classic;
 div {
     ul {
         .nav-link__active {
@@ -202,4 +213,100 @@ text-align: center;
 box-shadow: 0px 14px 56px -11px #1875FF;
 width: 10em;
 padding: 1em;
+}
+
+.card-contacto-formulario {
+    position: relative;
+    height: 450px;
+    background-color: $blanco;
+    box-shadow: 0.3em 0.3em 0.7em gray;
+    .label-contacto {
+        height: max-content;
+        z-index: 1;
+        position: relative;
+        textarea {
+            width: 500px;
+            height: 150px;
+            resize: none;
+        }
+        input {
+            width: 100%;
+            height: 35px;
+            transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+        }
+        span {
+            width: max-content;
+            height: max-content;
+            position: absolute;
+            background-color: $blanco;
+            transform: scale(85%);
+            z-index: 5;
+            color: gray;
+            pointer-events: none;
+            top: 29%;
+            left: 15px;
+            transition: 150ms cubic-bezier(0.4,0,0.2,1);
+        }
+        input:focus, input:valid {
+            outline: none;
+            border: 2px solid #1875FF;
+        }
+        .input:focus ~ span, input:valid ~ span {
+            transform: translateY(-55%) scale(0.8);
+            padding: 0 .2em;
+            color: #1875FF;
+           }
+    }
+    .email-whatsapp {
+        height: max-content;
+        width: max-content;
+        position: absolute;
+        right: -15%;
+        top: 40px;
+        .enviar__instagram {
+            @include flexbox-center;
+            width: 100px;
+            height: 50px;
+            background-color: $negro-claro;
+            color: $blanco;
+            div {
+                width: 50%;
+                height: 100%;
+                background-image: url(/img/icons/instagram.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+        .enviar__whatsapp {
+            @include flexbox-center;
+            width: 100px;
+            height: 50px;
+            background-color: $negro-claro;
+            color: $blanco;
+            div {
+                width: 50%;
+                height: 100%;
+                background-image: url(/img/icons/whatsapp.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+        .enviar__email {
+            @include flexbox-center;
+            width: 100px;
+            height: 50px;
+            background-color: $negro-claro;
+            color: $blanco;
+            div {
+                width: 50%;
+                height: 100%;
+                background-image: url(/img/icons/gmail.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
 }
